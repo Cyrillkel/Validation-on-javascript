@@ -3,49 +3,50 @@
 // // этот код работает в современном режиме
 
 
-// let money = 50000;
-// let freelance = 30000;
-// let expenses = 'food, traffic, clothes, other';
-// let purpose = 300000;
-// let period = 12;
+let money = 50000;
+let profit = 'freelance';
+let expenses = 'food, traffic, clothes, other';
+let purpose = 300000;
+let period = 12;
 
-// console.log(typeof money); // возвращает тип данных
-// console.log(typeof freelance); 
-// console.log(expenses.length); // длина строки
+console.log(typeof money); // возвращает тип данных
+console.log(typeof profit); 
+console.log(expenses.length); // длина строки
 
-// console.log('Период равен', period, 'месяцев');
-// console.log('Цель заработать', purpose, 'рублей');
+console.log('Период равен', period, 'месяцев');
+console.log('Цель заработать', purpose, 'рублей');
 
-// // let budgetDay = 50000 / 30;
-// // console.log(budgetDay)
+// let budgetDay = 50000 / 30;
+// console.log(budgetDay)
 
-// let budgetDay = money / 30;
-// console.log('Дневной бюджет', Math.ceil(budgetDay));
+let budgetDay = money / 30;
+console.log('Дневной бюджет', Math.ceil(budgetDay));
 
-// let newString = expenses.toLowerCase(); // нижний регистр
-// console.log(newString);
+let newString = expenses.toLowerCase(); // нижний регистр
+console.log(newString);
 
-// let arr = expenses.split(' '); // разбили строку на массив
-// console.log(arr);
+let arr = expenses.split(' '); // разбили строку на массив
+console.log(arr);
 
-// console.log(arr[0]);
-// console.log(arr[1]);
-// console.log(arr[2]);
-// console.log(arr[3]);
+console.log(arr[0]);
+console.log(arr[1]);
+console.log(arr[2]);
+console.log(arr[3]);
 
 
 
+// lesson-03
 
 
 console.log('--------------------------------lesson-03');
 
 
 
-let money = prompt('Какой ваш месячный доход?');
+money = prompt('Какой ваш месячный доход?');
 
 alert(`Ваш бюджет на месяц: ${money}`);
 
-let expenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую.');
+expenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую.');
 
 alert(`Ваши расходы: ${expenses}`);
 
@@ -57,15 +58,15 @@ let deposit = confirm('Есть ли у вас вклад в банке?');
 
 // console.log(typeof deposit); 
 
-let budgetMounth = money - amount;
-console.log(`Ваш бюджет на месяц: ${budgetMounth}`);
+// let budgetMounth = money - amount;
+// console.log(`Ваш бюджет на месяц: ${budgetMounth}`);
 
-let purpose = 1000000;
+purpose = 1000000;
 
-purpose = Math.ceil(purpose / budgetMounth);
-console.log(`Вы накопите необходимую сумму за ${purpose} месяцев`);
+// purpose = Math.ceil(purpose / budgetMounth);
+// console.log(`Вы накопите необходимую сумму за ${purpose} месяцев`);
 
-let budgetDay = Math.floor(money / 30);
+budgetDay = Math.floor(money / 30);
 console.log(`Ваш дневной бюджет: ${budgetDay}`);
 
 if ( budgetDay >= 6000 ) {
@@ -77,9 +78,42 @@ else if ( budgetDay > 3000 && budgetDay < 6000 ) {
 else if ( budgetDay < 3000 && budgetDay > 0 ) {
   console.log('К сожалению у вас уровень дохода ниже среднего');
 } 
-else if ( 0 < budgetDay ) {
+else  ( 0 < budgetDay ) 
   console.log('Что то пошло не так');
+
+
+
+console.clear();
+
+// lesson-04
+
+console.log('--------------------------------lesson-04');
+
+let extraMoney = +prompt(`Перечислите возможный доход за ваши дополнительные работы: ${profit}`);
+
+const getAccumulatedIncome = () => {
+  return Math.ceil(money - amount + extraMoney);
 }
+
+let accumulatedIncome = getAccumulatedIncome();
+
+const getTargetMounth = () => {
+  return Math.ceil(purpose / getAccumulatedIncome());
+}
+
+budgetDay = Math.ceil(accumulatedIncome / 30);
+
+console.log('Ваш бюджет на месяц с учетом ваших расходов составляет:', getAccumulatedIncome());
+console.log(`Ваша цель накопить ${purpose} с учетом ваших расходов будет достигнута через`, getTargetMounth() + ` месяца`);
+console.log('Дневной бюджет', budgetDay);
+
+
+
+
+
+
+
+
 
 
 
