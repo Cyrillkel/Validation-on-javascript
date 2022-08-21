@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Вход -->
+    <form class="form form-auth">
+      <span class="form__top-title"><a href="Registration.html">Зарегестрироваться</a></span>
+      <h2 class="form__title">
+        Вход
+      </h2>
+      <div class="form__item">
+        <span class="form__element" id="form__email-element" >*</span>
+        <span class="form__item-title">
+          Email
+        </span>
+        <input id="email-auth" type="text" placeholder="Введите email" class="form__item-input">
+        <span class="error" id="email-empty">Поле обязательно для заполнения</span>
+        <span class="error" id="email-valid">Email невалидный</span>
+      </div>
+      <div class="form__item">
+        <span class="form__element" id="form__pass-element">*</span>
+        <span class="form__item-title">
+          Пароль
+        </span>
+        <input id="password-auth" type="password" placeholder="Введите пароль" class="form__item-input">
+        <span class="error" id="password-length">Пароль должен содержать как минимум 8 символов</span>
+      </div>
+      <div class="form__item">
+        <span class="form__checkbox-element">*</span>
+        <input type="checkbox" id="check-auth">
+        <label class="checkbox-text" for="check-auth">Я согласен получать обновления на почту</label>
+        <span class="error" id="password-empty">Поле обязательно для заполнения</span>
+      </div>
+      <button class="form__submit">Вход</button>
+    </form>
+  </div>
+  </form>
+  <script src="./js/authorisation.js"></script>
+  <script src="./js/registration.js"></script>
+</body>
+
+</html>
