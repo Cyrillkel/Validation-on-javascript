@@ -57,6 +57,7 @@ a {
 .form__item {
   margin-bottom: 13px;
   position: relative;
+  margin-top: 20px;
 }
 
 .form__element {
@@ -69,12 +70,6 @@ a {
   position: absolute;
   left: -12px;
 }
-
-/* .form__item::before {
-  content: "*";
-  position: absolute;
-  left: -10px;
-} */
 
 .form__item-title {
   display: block;
@@ -103,6 +98,7 @@ a {
   display: block;
   margin-top: 5px;
   display: none;
+  position: absolute;
 }
 
 .checkbox-text {

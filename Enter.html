@@ -28,17 +28,18 @@
       </div>
       <div class="form__item">
         <span class="form__element" id="form__pass-element">*</span>
-        <span class="form__item-title">
+        <span class="form__pass-title">
           Пароль
         </span>
         <input id="password-auth" type="password" placeholder="Введите пароль" class="form__item-input">
+        <span class="error" id="password-empty">Поле обязательно для заполнения</span>
         <span class="error" id="password-length">Пароль должен содержать как минимум 8 символов</span>
       </div>
       <div class="form__item">
         <span class="form__checkbox-element">*</span>
         <input type="checkbox" id="check-auth">
         <label class="checkbox-text" for="check-auth">Я согласен получать обновления на почту</label>
-        <span class="error" id="password-empty">Поле обязательно для заполнения</span>
+        <span class="error" id="check-empty">Поле обязательно для заполнения</span>
       </div>
       <button class="form__submit">Вход</button>
     </form>

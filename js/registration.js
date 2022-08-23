@@ -43,7 +43,7 @@ buttonRegistration.addEventListener("click", (even) => {
 
 const validRegistration = () => {
   //проверка на пустые строку email
-  if (emailResult.length == "") {
+  if (emailResult.length === 0) {
     errorEmailRegistration.style.display = "block";
     emailRegistration.style.borderColor = "red";
     emailValid.style.display = "none";
@@ -55,7 +55,7 @@ const validRegistration = () => {
     errorCheckboxElement.style.color = "red";
   } else {
     errorEmailRegistration.style.display = "none";
-    emailRegistration.style.borderColor = "inherit";
+    emailRegistration.style.borderColor = "#787878";
     errorEmailTitle.style.color = "#787878";
     errorPassTitle.style.color = "#787878";
     errorEmailElement.style.color = "#787878";
@@ -65,6 +65,10 @@ const validRegistration = () => {
     // проверка валидности email
     if (!validateEmail(emailResult)) {
       emailValid.style.display = "block";
+      errorEmailTitle.style.color = "red";
+      errorEmailElement.style.color = "red";
+      emailRegistration.style.borderColor = "red";
+      
     } else {
       emailValid.style.display = "none";
       user.email = emailResult;
@@ -73,18 +77,22 @@ const validRegistration = () => {
   }
 
   //проверка на пустые строку password
-  if (passwordResult.length == "") {
+  if (passwordResult.length === 0) {
     errorPasswordRegistration.style.display = "block";
+    
     passwordRegistration.style.borderColor = "red";
     passwordValidLength.style.display = "none";
     passwordValid = false;
   } else {
     errorPasswordRegistration.style.display = "none";
-    passwordRegistration.style.borderColor = "inherit";
+    passwordRegistration.style.borderColor = "#787878";
 
     //проверка на длину пароля
     if (passwordResult.length < 8) {
       passwordValidLength.style.display = "block";
+      errorPassTitle.style.color = "red";
+      errorPassElement.style.color = 'red';
+      passwordRegistration.style.borderColor = "red";
     } else {
       passwordValidLength.style.display = "none";
       user.password = passwordResult;
@@ -94,7 +102,9 @@ const validRegistration = () => {
 
   if (!checkBoxResult) {
     checkBoxError.style.display = "block";
+    errorCheckboxElement.style.color = "red";
     checkedValid = false;
+    
   } else {
     checkBoxError.style.display = "none";
     checkedValid = true;
@@ -113,7 +123,7 @@ const validateEmail = (email) => {
 const localDate = () => {
   if (emailValidUser && passwordValid && checkedValid) {
     localStorage.user = JSON.stringify(user);
-    console.log(typeof localStorage.getItem(user));
+    console.log(localStorage.getItem('user'));
   }
 };
 
